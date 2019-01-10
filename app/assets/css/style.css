@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#navb{
+	background: pink;
+	font-family: 'Coiny', cursive;
+	letter-spacing: 1px;
+	box-shadow: 2px 2px 8px #888888;
+}
+
+#jumbo{
+	height: 200px;
+}
+
+footer{
+	background: pink;
+}
+
+#cards{
+	box-shadow: 2px 2px 8px #888888;
+}
+
+#cards_group{
+	margin-left: 100px;
+}
+
+#jumbo_reg{
+	color: white;
+	font-size: 50px;
+	background: grey;
+	text-align: center;
+}
