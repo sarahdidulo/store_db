@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,10 +46,11 @@
 
 	 	get_page_content();
 
-		mysqli_close($conn);
+		// mysqli_close($conn);
 	  ?>
 
-	  <?php require_once 'footer.php'; ?>
-	
+<?php require_once 'footer.php'; ?>
+
 </body>
 </html>
+	

@@ -12,11 +12,21 @@
 }
 
 #jumbo{
-	height: 200px;
+	color: olive;
+	font-size: 50px;
+	background: lightgrey;
+	text-align: center;
 }
 
 footer{
+	/*bottom: 0;*/
 	background: pink;
+	height: 30px;
+	width: 100vw;
+}
+
+#form_row{
+	margin: 4%;
 }
 
 #cards{
@@ -32,4 +42,30 @@ footer{
 	font-size: 50px;
 	background: grey;
 	text-align: center;
+}
+
+.validation{
+	color: red;
+	font-size: 12px;
+}
+
+#login{
+	background-color: aquamarine;
+	font-weight: bold;
+}
+
+#register{
+	background-color: olive;
+	font-weight: bold;
+}
+
+#jumbo_login{
+	color: white;
+	font-size: 50px;
+	background: grey;
+	text-align: center;
+}
+
+#form_login{
+	margin: 5%;
 }

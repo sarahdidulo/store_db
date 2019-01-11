@@ -1,8 +1,10 @@
-<footer class="row fixed-bottom px-3 justify-content-center">
+<footer class="row justify-content-center">
 	<small class="text-muted">
 		DISCLAIMER: This site is for educational purposes only. I do not own nor claim to own any content within this site. &copy;2019 Musiq Inc.
-	</small>	
+	</small>
 </footer>
 
 
-<script src="../assets/js/script.js"></script>
+<script type = "text/javascript" src="../assets/js/script.js"></script>
+
+

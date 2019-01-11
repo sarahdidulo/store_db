@@ -81,14 +81,15 @@ global $conn; ?>
 					}
 
 			// echo $_SESSION['sort'];
+				// $_SESSION['sort'] = $_GET['sort']; //can also be implemented if walang sort.php
+
 
 				$sorting = $_SESSION['sort'];
-				echo $sorting;
+				// echo $sorting;
 
 					if(isset($_SESSION['sort'])){
-						$sql2 .= " ORDER BY price $sorting"; //walang double quot yung $sorting since hindi 
+						$sql2 .= " ORDER BY price $sorting"; //walang double quot yung $sorting since hindi value
 					}
-
 
 
 
@@ -100,18 +101,25 @@ global $conn; ?>
 
 				<div class = "col-sm-3">
 					<div id= "cards" class = "card h-100 m-1"> <!-- h-100 is 100 percent of content -->
-						<img class = "card-img-top" src ="<?php echo $item['image_path']; ?>" height = "300px">
+						<img class = "card-img-top" src ="<?php echo $item['image_path']; ?>" height = "150px">
 						<div class = "card-body">
 							<h4 class = "card-title">
 								<?php echo $item['name']; ?>
 							</h4>
-							<p class= "card-text" height="150px" style="background-color: pink">
+							<p class= "card-text" height="50px" style="background-color: pink">
 								<?php echo $item['description'];?>
 							</p>
 							<p class ="card-text" height="50px">
 								<?php echo $item['price']; ?>
 							</p>
 						</div>
+
+						<div class = "card-footer">
+							<input type = "number" class = "form-control" value="1">
+							<button type = "submit" class = "btn btn-block btn-outline-primary add-to-cart" data-id="<?php echo $item['id']; ?>"> Add to cart </button>
+						</div>
+
+
 					</div> <!-- end of card -->
 
 				</div><!--  end item col -->
