@@ -13,6 +13,9 @@
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">	
 
+	<!-- animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
@@ -32,6 +35,7 @@
   	<!-- fonts -->
 
  	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
 
 
 </head>

@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+.row{
+	font-family: 'Patrick Hand SC', cursive;
+}
+
 #navb{
 	background: pink;
 	font-family: 'Coiny', cursive;
@@ -31,10 +35,13 @@ footer{
 
 #cards{
 	box-shadow: 2px 2px 8px #888888;
+	/*margin-bottom: 100px;*/	
 }
 
-#cards_group{
-	margin-left: 100px;
+.card_desc{
+	font-size: 15px;
+	padding: 10px;	
+	line-height: 12px;
 }
 
 #jumbo_reg{
@@ -57,6 +64,8 @@ footer{
 #register{
 	background-color: olive;
 	font-weight: bold;
+	text-decoration: none;
+	color: black;
 }
 
 #jumbo_login{

@@ -12,7 +12,7 @@
 
 	</div>
 
-	<form id = "form_login" action = "../controllers/authenticate.php" method="POST">
+	<form class = "w-50" style="margin-left: 25%; margin-top: 2%;	">
 		<div class = "form-group">
 			<label for="username"> Username: </label>
 			<input id = "username" class = "form-control" type="text" name="username">
@@ -26,7 +26,7 @@
 		</div>
 
 		<div class = "text-center py-4">
-			<a href = "./register.php" class = "btn"> Register </a>
+			<a id="register" href = "./register.php" class = "btn"> Register </a>
 			<button id = "login" type = "submit" class = "btn"> Login </button>
 		</div>
 	</form>

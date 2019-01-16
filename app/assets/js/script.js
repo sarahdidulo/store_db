@@ -127,17 +127,21 @@ $(document).ready( function(){
 		let username = $("#username").val();
 		let password = $("#password").val();
 
+		console.log(username + " " + password);
+
 		$.ajax({
-			"url" : "../controllers/authenticate.php",
+			"url" : "./../controllers/authenticate.php",
 			"method" : "POST",
 			"data": {
 				'username':username,
 				'password':password
 			},
 			"success":(data) => {
+				console.log(data);
 				if(data == "login_failed") {
 					$("#username").next().html("Please provide correct credentials");
 				} else {
+					alert("login success");
 					window.location.replace("../views/home.php");
 				}
 			}
@@ -145,7 +149,7 @@ $(document).ready( function(){
 
 	}); //end of login click
 
-	$(document).on('click', '.add-to-cart', (e) => {
+	$(document).on('click', '.add-to-cart', (e) => { // e is event?
 		e.preventDefault(); //prevents the default behavior of the button add-to-cart and override it on our own
 		e.stopPropagation(); //prevent parent elements to be triggered
 
@@ -159,7 +163,8 @@ $(document).ready( function(){
 			"method" : "POST",
 			"data" : {
 				"item_id" : item_id,
-				"item_quantity" : item_quantity
+				"item_quantity" : item_quantity,
+				"update_from_cart_page" : 0
 			},
 			"success" : (data) => {
 				$("#cart-count").html(data);
@@ -167,7 +172,78 @@ $(document).ready( function(){
 
 		}); //end of ajax
 
+
+
 	}); //end of click
+
+	function getTotal(){
+		// alert("hello");
+			let total = 0;
+			$(".item_subtotal").each(function(e){ //will iterate in the whole cart?
+				total += parseFloat($(this).html());
+			});
+				$('#total_price').html(total.toFixed(2));
+	}
+
+
+	$(".item_quantity > input").on('input', (e) => {
+			let item_id = $(e.target).attr('data-id'); //value of data-id of the target
+			let quantity = parseInt($(e.target).val());
+			let price = parseFloat($(e.target).parents('tr').find(".item_price").html()); // bakit di pwede mag .val()
+
+			let subtotal = quantity * price;
+			$(e.target).parents('tr').find('.item_subtotal').html(subtotal.toFixed(2));
+
+			getTotal();
+
+			$.ajax({
+				"method" : "POST",
+				"url" : "./../controllers/update_cart.php",
+				"data" : {
+					'item_id' : item_id, //declared values 
+					'item_quantity' : quantity, //declared values
+					'update_from_cart_page' : 1
+				},
+				"success" : (data) => {
+					$('#cart-count').html(data);
+				}
+			}); //end of ajax
+
+
+
+
+	}); //end of on input
+
+	$(document).on("click", ".item-remove", (e) => {
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		let item_id = $(e.target).attr('data-id');
+
+		$.ajax({
+			"method" : "POST",
+			"url" : "./../controllers/update_cart.php",
+			"data" : {
+				"item_id" : item_id,
+				"item_quantity" : 0
+			},
+			"success" : (data) => {
+				// $(e.target).parents('tr').remove();
+				$("#cart-count").html(data);
+				getTotal();
+				window.location.replace("../views/cart.php");
+			}
+		});
+
+	}); //end of button remove
+
+
+	//submit profile form updates
+	$('#update_info').click( ()=>{
+		alert("hello");
+		$('#update_user_details').submit();
+	});
 
 
 

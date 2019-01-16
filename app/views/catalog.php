@@ -84,12 +84,13 @@ global $conn; ?>
 				// $_SESSION['sort'] = $_GET['sort']; //can also be implemented if walang sort.php
 
 
-				$sorting = $_SESSION['sort'];
+				if(isset($_SESSION['sort'])){
+					$sorting = $_SESSION['sort'];
+					$sql2 .= " ORDER BY price $sorting"; //walang double quot yung $sorting since hindi value
+				}
 				// echo $sorting;
 
-					if(isset($_SESSION['sort'])){
-						$sql2 .= " ORDER BY price $sorting"; //walang double quot yung $sorting since hindi value
-					}
+
 
 
 
@@ -99,24 +100,24 @@ global $conn; ?>
 
 			foreach ($items as $item) { ?>
 
-				<div class = "col-sm-3">
-					<div id= "cards" class = "card h-100 m-1"> <!-- h-100 is 100 percent of content -->
+				<div class = "col-sm-3 p-3">
+					<div id= "cards" class = "card h-90"> <!-- h-100 is 100 percent of content -->
 						<img class = "card-img-top" src ="<?php echo $item['image_path']; ?>" height = "150px">
 						<div class = "card-body">
 							<h4 class = "card-title">
 								<?php echo $item['name']; ?>
 							</h4>
-							<p class= "card-text" height="50px" style="background-color: pink">
+							<div class= "card-text card_desc" style="background-color: pink; height: 60px;">
 								<?php echo $item['description'];?>
-							</p>
+							</div>
 							<p class ="card-text" height="50px">
 								<?php echo $item['price']; ?>
 							</p>
 						</div>
 
 						<div class = "card-footer">
-							<input type = "number" class = "form-control" value="1">
-							<button type = "submit" class = "btn btn-block btn-outline-primary add-to-cart" data-id="<?php echo $item['id']; ?>"> Add to cart </button>
+							<input type = "number" class = "form-control my-2" value="1">
+							<button type = "submit" class = "btn btn-block btn-outline-primary add-to-cart my-2" data-id="<?php echo $item['id']; ?>"> Add to cart </button>
 						</div>
 
 
