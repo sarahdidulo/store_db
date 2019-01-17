@@ -1,8 +1,13 @@
 <?php require_once './../partials/template.php' ; ?>
 
-<?php function get_page_content() { ?>
+<?php function get_page_content() { 
 
-<?php global $conn; ?>
+
+if(isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 1){
+
+	global $conn; 
+
+?>
 
 <div class = "container">
 	<div class = "row">
@@ -23,7 +28,7 @@
 
 				<div class = "form-group">
 					<label for = "description"> Description: </label>
-					<input type = "text" class = "form-control col-8" rows="5" name = "description" id = "description">
+					<textarea type = "text" class = "form-control col-8" rows="5" name = "description" id = "description"></textarea>
 				</div>
 
 				<div class = "form-group">
@@ -40,7 +45,7 @@
 
 								extract($category);
 
-								echo "<option value='$id'>$name</option>";
+								echo "<option value='$id'>$name</option>"; 
 							}
 
 
@@ -66,6 +71,12 @@
 
 
 </div> <!-- end container -->
+
+<? } else { 
+
+	header('location: ./error.php');
+
+} ?>
 
 
 

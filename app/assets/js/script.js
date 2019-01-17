@@ -92,6 +92,7 @@ $(document).ready( function(){
 			let lastname = $("#lastname").val();
 			let email = $("#email").val();
 			let address = $("#address").val();
+			let role = $('#role').val();
 
 			$.ajax({
 				"url" : '../controllers/create_user.php', //the address is based on sa register page.
@@ -102,7 +103,8 @@ $(document).ready( function(){
 					'firstname' :firstname,
 					'lastname' :lastname,
 					'email' :email,
-					'address' :address
+					'address' :address,
+					'role' : role
 				},
 				"success":(data) => {
 					if(data == "user_exists"){
@@ -149,7 +151,7 @@ $(document).ready( function(){
 
 	}); //end of login click
 
-	$(document).on('click', '.add-to-cart', (e) => { // e is event?
+	$(document).on('click', '.add-to-cart', (e) => { // e is event? parameter of the function?
 		e.preventDefault(); //prevents the default behavior of the button add-to-cart and override it on our own
 		e.stopPropagation(); //prevent parent elements to be triggered
 
@@ -241,9 +243,29 @@ $(document).ready( function(){
 
 	//submit profile form updates
 	$('#update_info').click( ()=>{
-		alert("hello");
 		$('#update_user_details').submit();
 	});
+
+
+	$('.update_role').click( (e)=>{
+		let id = $(e.target).attr('data-id');
+		
+		$.ajax({
+			"method" : "POST",
+			"url" : "./../controllers/grant_admin.php",
+			"data" : {
+				"id" : id
+			}, 
+			beforeSend: function(){
+				
+			},
+			"success" : () => {
+				window.location.replace("./../views/users.php");
+			}
+
+		}); //end of ajax
+
+	}); //end of click
 
 
 

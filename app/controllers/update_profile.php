@@ -16,8 +16,8 @@
 
 	$sql_fetch = "SELECT * FROM users WHERE id = $id";
 	$result = mysqli_query($conn, $sql_fetch);
-	$_SESSION['user'] = mysqli_fetch_assoc($result);
-
+	$_SESSION['user'] = mysqli_fetch_assoc($result);	
+ 
 
 	header('Location: ../views/profile.php');
 

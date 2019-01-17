@@ -1,5 +1,6 @@
 <?php require_once "../partials/template.php";
 function get_page_content(){
+    if(isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 2){
 	global $conn;
      ?>
 	<div class="container main-container my-4">
@@ -16,5 +17,11 @@ function get_page_content(){
             </div>
         </div>
     </div>
+
+<?php } else { 
+
+    header('location: ./error.php');
+    
+    } ?>
 
 <?php }?>

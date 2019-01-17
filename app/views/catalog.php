@@ -2,9 +2,13 @@
 
 <?php function get_page_content () {
 
+if(isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 2){
+
 require_once '../controllers/connect.php'; // na-require na sa template
 
-global $conn; ?>
+global $conn; 
+
+?>
 <div class = "row no-gutters p-5">
 
 <div class = "col-sm-2">
@@ -137,15 +141,13 @@ global $conn; ?>
 
 
 
-<?php 
+<?php } else {
 
-// $sql = "SELECT * FROM items";
+	header('location: ./error.php');
 
-// $result = mysqli_query($conn, $sql);
+}
 
-// $row = mysqli_fetch_assoc($result);
 
-// while(mysqli_num_rows($))
 
 ?>
 

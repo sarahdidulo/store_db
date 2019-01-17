@@ -2,17 +2,12 @@
 
 <?php function get_page_content() {
 
+	if(isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 2){
+
 	global $conn;
 
 ?>
 
-
-	<?php 
-	if(!isset($_SESSION['user'])){
-		header("Location: ./login.php");
-	}
-
-	?>
 
 	<h1>Hello, welcome to your checkout page</h1>
 
@@ -100,6 +95,12 @@
 		</div>
 		
 	</form>
+
+<? } else {
+
+	header('location: ./error.php');
+
+} ?>
 
 
 

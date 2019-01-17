@@ -42,6 +42,11 @@
 					<label for="username"> Username: </label>
 					<input id = "username" class = "form-control" type="text" name="username">
 					<p class = "validation"></p>
+					<label for="role"> Role: </label>
+					<select id = "role" class = "form-control" type="text" name="role">
+						<option value = 1>Admin</option>
+						<option value = 2>User</option>
+					</select>
 					<label for="password"> Password: </label>
 					<input id = "password" type = "password" class = "form-control" type="text" name="password">
 					<p class = "validation"></p>

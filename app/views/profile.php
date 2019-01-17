@@ -12,8 +12,11 @@
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="list-group my-5" id="list-tab" role="tablist">
-					<a class="list-group-item" href="#profile" data-toggle="list" role="tab">
+					<a class="list-group-item active" href="#profile" data-toggle="list" role="tab">
 						User Information
+					</a>
+					<a class="list-group-item" href="#profile" data-toggle="list" role="tab">
+						Change your password
 					</a>
 					<a class="list-group-item" href="#history" data-toggle="list" role="tab">
 						Order History
@@ -22,7 +25,7 @@
 			</div>
 			<div class="col-lg-7">
 				<div class="tab-content">
-					<div class="tab-pane m-5" id="profile" role="tabpanel">
+					<div class="tab-pane m-5 show active" id="profile" role="tabpanel">
 						<h3>User Information</h3>
 						<form id="update_user_details" action="../controllers/update_profile.php" method="POST">
 							<div class="container">
@@ -30,6 +33,12 @@
 								<label for="username">Username:</label>
 								<input type="text" class="form-control" id="username" name="username" value="<?php echo $_SESSION['user']['username']; ?>" disabled>
 								<span class="validation"></span><br>
+								<!-- <label for = "role">Role:</label> -->
+								<!-- <select id = "role" class = "form-control" name = "role_id">
+									<option value = '1' <?//php if($_SESSION['user']['roles_id'] == 1) echo "selected"?>>Admin</option>
+									<option value = '2' <?//php if($_SESSION['user']['roles_id'] == 2) echo "selected"?>>User</option>
+								</select> -->
+								<br>
 								<label for="firstname">First Name</label>
 								<input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $_SESSION['user']['firstname']; ?>">
 								<span class="validation"></span><br>
