@@ -256,13 +256,49 @@ $(document).ready( function(){
 			"data" : {
 				"id" : id
 			}, 
-			beforeSend: function(){
+			// beforeSend: function(){
 				
-			},
+			// },
 			"success" : () => {
 				window.location.replace("./../views/users.php");
 			}
 
+		}); //end of ajax
+
+	}); //end of click
+
+
+	$('.complete_order').click ( (e) => {
+
+		let order_id = $(e.target).attr('data-id');
+
+		$.ajax({
+			"method" : "POST",
+			"url" : "./../controllers/complete_order.php",
+			"data" : {
+				"order_id" : order_id
+			},
+			"success" : () => {
+				window.location.replace("./../views/orders.php");
+			}
+		}); //end of ajax
+
+	}); //end of click
+
+
+	$('.cancel_order').click ( (e) => {
+
+		let order_id = $(e.target).attr('data-id');
+
+		$.ajax({
+			"method" : "POST",
+			"url" : "./../controllers/cancel_order.php",
+			"data" : {
+				"order_id" : order_id
+			},
+			"success" : () => {
+				window.location.replace("./../views/orders.php");
+			}
 		}); //end of ajax
 
 	}); //end of click

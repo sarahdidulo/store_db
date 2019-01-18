@@ -8,24 +8,42 @@
 
 ?>
 
-
-	<h1>Hello, welcome to your checkout page</h1>
-
 	<form method = "POST" action="../controllers/placeorder.php">
 		<div class = "container mt-4">
 			<div class = "row">
-				<div class = "col-8">
+				<h1>Hello, welcome to your checkout page</h1>
+				<div class = "col-8 my-5">
 					<h4>Shipping Address</h4>
 					<div class = "form-group">
 						<input type = "text" class = "form-control" name = "addressLine1" value = "<?php echo $_SESSION['user']['address'];?>">
 					</div>
 				</div>
+
+				<div class = "col-sm-4 my-5">
+					<h4>Payment Methods</h4>
+					<select name = "payment_modes" id = "payment_mode" class = "form-control">
+						<?php
+
+						$payment_mode_query = "SELECT * FROM payment_modes";
+
+						$payment_modes = mysqli_query($conn, $payment_mode_query);
+
+						foreach($payment_modes as $payment_mode){
+							extract($payment_mode);
+
+							echo '<option value = '. $id .'>'. $name .' </option>';
+						}
+
+						?>
+					</select>
+				</div>
+
 			</div>
 
 			<div class = "row">
 				<h4>Order Summary</h4>
 				<div class = "col-sm-6">
-					<p>Total</p>
+					
 				</div>
 
 				<div class = "col-sm-6" id = "total_price">
@@ -44,7 +62,7 @@
 						$cart_total += $subTotal;
 					}
 
-					echo $cart_total;
+					echo '<p>Total: &nbsp&nbsp ' . $cart_total . '</p>' ;
 
 				?>
 
@@ -97,6 +115,9 @@
 	</form>
 
 <? } else {
+
+
+
 
 	header('location: ./error.php');
 

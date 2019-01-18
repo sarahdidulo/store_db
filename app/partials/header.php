@@ -33,17 +33,21 @@
 
             <?php } else if ($_SESSION['user']['roles_id'] == 1){ ?>
 
+             <li class="nav-item">
+               <a class="nav-link" href="./../views/users.php"> Users </a>
+             </li>
+  
               <li class="nav-item">
                 <a class="nav-link" href="./../views/items.php"> Items </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="./../views/new_item.php"> Add an Item </a>
+                <a class="nav-link" href="./../views/orders.php"> Orders </a>
               </li>
 
           <?php } ?>
-        
-        
+
+
         <li class="nav-item">
           <a class="nav-link" href="./../views/profile.php"> Welcome, <?php echo $_SESSION['user']['firstname'] . " ! " ?></a>
         </li>
