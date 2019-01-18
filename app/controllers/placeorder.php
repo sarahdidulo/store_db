@@ -174,8 +174,8 @@ else {
 
     $redirectUrls = new RedirectUrls();
     $redirectUrls
-        ->setReturnUrl('http://192.168.10.32/batch19/store/app/controllers/pay.php?success=true')
-        ->setCancelUrl('http://192.168.10.32/batch19/store/app/controllers/pay.php?success=false');
+        ->setReturnUrl('https://cake-store-db.herokuapp.com/batch19/store/app/controllers/pay.php?success=true')
+        ->setCancelUrl('https://cake-store-db.herokuapp.com/store/app/controllers/pay.php?success=false');
 
     $payment = new Payment();
     $payment->setIntent('sale')
