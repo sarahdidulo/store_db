@@ -74,9 +74,9 @@
 
 			<button type = "submit" class = "btn btn-primary btn-block">Place Your Order Now</button>
 
-			<div class = "row cart-items mt-4">
+			<div class = "row cart-items m-5">
 				<div class = "table-responsive">
-					<table class = "table table-striped table-bordered" id = "cart-items">
+					<table class = "table table-striped table-bordered " id = "cart-items">
 						<thead>
 							<tr class = "text-center">
 								<th colspan = "2"> Item Name </th>
