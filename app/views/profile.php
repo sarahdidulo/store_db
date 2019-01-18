@@ -15,9 +15,7 @@
 					<a class="list-group-item active" href="#profile" data-toggle="list" role="tab">
 						User Information
 					</a>
-					<a class="list-group-item" href="#profile" data-toggle="list" role="tab">
-						Change your password
-					</a>
+				
 					<a class="list-group-item" href="#history" data-toggle="list" role="tab">
 						Order History
 					</a>
