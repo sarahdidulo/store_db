@@ -2,8 +2,6 @@
 
 <?php function get_page_content () { ?>
 
-	<?php if(isset($_SESSION['user'])){ ?>
-
 	<div class = "row no-gutters">
 
 		<div class = "col-sm-12">
@@ -33,13 +31,6 @@
 		</div>
 	</form>
 
-<?php } else {
-
-	header('location: ./error.php');
-
-}
-
-?>
 
 
 
