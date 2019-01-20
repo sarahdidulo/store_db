@@ -9,9 +9,9 @@ require_once '../controllers/connect.php'; // na-require na sa template
 global $conn; 
 
 ?>
-<div class = "row no-gutters p-5">
+<div class = "page_bg row no-gutters">
 
-<div class = "col-sm-2">
+<div class = "catalog_list col-sm-3">
 
 	<!-- <form method="GET" action="catalog.php">
 		<div class="list-group">
@@ -49,15 +49,15 @@ global $conn;
 
 
  	<h2>Sort</h2>
- 	<ul class = "list-group border">
+ 	<ul class = "list-group">
  		<a href="../controllers/sort.php?sort=asc">
  			<li class = "list-group-item">
- 				Price(Lowest to Highest)
+ 				Price (Lowest to Highest)
  			</li>
  		</a>
  		<a href="../controllers/sort.php?sort=desc">
  			<li class = "list-group-item">
- 				Price(Highest to Lowest)
+ 				Price (Highest to Lowest)
  			</li>
  		</a>
  	</ul>
@@ -65,7 +65,7 @@ global $conn;
 
 </div>
 
-<div class = "col-sm-10">
+<div class = "card-group col-sm-9">
 	
 		<?php
 
@@ -104,24 +104,24 @@ global $conn;
 
 			foreach ($items as $item) { ?>
 
-				<div class = "col-sm-3 p-3">
-					<div id= "cards" class = "card h-90"> <!-- h-100 is 100 percent of content -->
+				<div class = "catalog col-sm-3">
+					<div id= "cards" class = "card"> <!-- h-100 is 100 percent of content -->
 						<img class = "card-img-top" src ="<?php echo $item['image_path']; ?>" height = "150px">
 						<div class = "card-body">
 							<h4 class = "card-title">
 								<?php echo $item['name']; ?>
 							</h4>
-							<div class= "card-text card_desc" style="background-color: pink; height: 60px;">
+							<div class= "card-text card_desc" style="height: 50px;">
 								<?php echo $item['description'];?>
 							</div>
-							<p class ="card-text" height="50px">
-								<?php echo $item['price']; ?>
+							<p class ="card-text">
+								<?php echo "₱ " . $item['price']; ?>
 							</p>
 						</div>
 
 						<div class = "card-footer">
 							<input type = "number" class = "form-control my-2" value="1">
-							<button type = "submit" class = "btn btn-block btn-outline-primary add-to-cart my-2" data-id="<?php echo $item['id']; ?>"> Add to cart </button>
+							<button type = "submit" class = "btn btn-block add-to-cart" data-id="<?php echo $item['id']; ?>"> Add to cart </button>
 						</div>
 
 

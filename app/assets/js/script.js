@@ -256,9 +256,9 @@ $(document).ready( function(){
 			"data" : {
 				"id" : id
 			}, 
-			// beforeSend: function(){
-				
-			// },
+			beforeSend: function(){
+				return confirm("Are you sure you want to update?");
+			},
 			"success" : () => {
 				window.location.replace("./../views/users.php");
 			}
@@ -287,7 +287,6 @@ $(document).ready( function(){
 
 
 	$('.cancel_order').click ( (e) => {
-
 		let order_id = $(e.target).attr('data-id');
 
 		$.ajax({

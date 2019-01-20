@@ -35,9 +35,9 @@
   	<!-- fonts -->
 
  	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
- 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-
-
+ 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+ 	
 </head>
 <body>
 

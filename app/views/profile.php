@@ -8,10 +8,9 @@
 <?php //echo $_SESSION['user']['lastname'] . '<br>';?>
 <?php //echo $_SESSION['user']['email'] . '<br>';?>
 <?php //var_dump($_SESSION['user'])?>
-	<div class="container">
-		<div class="row">
+		<div class="profile_bg row no-gutters">
 			<div class="col-lg-3">
-				<div class="list-group my-5" id="list-tab" role="tablist">
+				<div class="profile_list list-group my-5" id="list-tab" role="tablist">
 					<a class="list-group-item active" href="#profile" data-toggle="list" role="tab">
 						User Information
 					</a>
@@ -30,7 +29,7 @@
 								<input type="text" class="form-control" name="user_id" value="<?php echo $_SESSION['user']['id']; ?>" hidden>
 								<label for="username">Username:</label>
 								<input type="text" class="form-control" id="username" name="username" value="<?php echo $_SESSION['user']['username']; ?>" disabled>
-								<span class="validation"></span><br>
+								<span class="validation"></span>
 								<!-- <label for = "role">Role:</label> -->
 								<!-- <select id = "role" class = "form-control" name = "role_id">
 									<option value = '1' <?//php if($_SESSION['user']['roles_id'] == 1) echo "selected"?>>Admin</option>
@@ -50,7 +49,7 @@
 								<input type="text" class="form-control" id="address" name="address" value="<?php echo $_SESSION['user']['address']; ?>">
 								<span class="validation"></span><br>
 								<br>
-								<button type="button" class="btn btn-primary mb-5" id="update_info">Update Info</button>
+								<button type="button" class="btn mb-5" id="update_info">Update Info</button>
 							</div>
 						</form>
 					</div>
@@ -77,8 +76,10 @@
 									//retrieve purchase date
 									//retrive payment mode
 
+									$id = $user['id'];
+
 									$sql = "SELECT o.transaction_code, o.purchase_date, s.name AS status, p.name AS payment_mode FROM orders o JOIN statuses s ON (o.status_id = s.id) 
-										JOIN payment_modes p ON (o.payment_mode_id = p.id) WHERE user_id =". $user['id'];
+										JOIN payment_modes p ON (o.payment_mode_id = p.id) WHERE user_id = $id ORDER BY o.purchase_date DESC";
 
 										//echo $_SESSION['user']['username'];
 
@@ -103,5 +104,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
 <?php } ?>

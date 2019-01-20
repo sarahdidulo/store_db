@@ -1,6 +1,6 @@
-  <nav id= "navb" class="navbar navbar-expand-lg navbar-light">
+  <nav id= "navb" class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="./home.php">
-      <i class="fas fa-cookie-bite"></i>   Store
+      <img src = "../assets/images/plate.png"></img>   CHOWDOWN
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav">
@@ -49,7 +49,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" href="./../views/profile.php"> Welcome, <?php echo $_SESSION['user']['firstname'] . " ! " ?></a>
+          <a class="nav-link" href="./../views/profile.php"> Welcome, <?php echo $_SESSION['user']['firstname']?> !</a>
         </li>
 
         <li class="nav-item">

@@ -23,7 +23,7 @@ session_start();
 			$update_flag = $_POST['update_from_cart_page'];
 
 			if($update_flag == 0){
-				//in catalog page, add as there is an exis
+				//in catalog page, add as there is an exists
 				$_SESSION['cart'][$item_id] += $item_quantity; //if there is no update flag, add to the quantity in the cart
 			} else {
 				$_SESSION['cart'][$item_id] = $item_quantity; //if there is and update flag, update or override the quantity of the item

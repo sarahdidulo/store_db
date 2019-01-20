@@ -7,12 +7,11 @@
 	global $conn;
 
 	?>
+		<div class = "cart_bg row no-gutters">
 
-	<div class = "container">
-		<h4 class = "text-center">User Admin Page</h4>
-		<div class = "row">
-			<div class = "col-sm-8 offset-sm-2">
-				<table class = "table table-responsive table-striped">
+			<div class = "users col-sm-8">
+				<h4 class = users_header>User Admin Page</h4>
+				<table class = "users_table table table-responsive table-striped">
 					<thead>
 						<tr>
 							<th>Username</th>
@@ -72,7 +71,6 @@
 				</table>
 			</div> <!-- end of col -->
 		</div> <!-- end of row -->
-	</div> <!-- end of container -->
 
 
 
