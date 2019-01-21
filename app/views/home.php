@@ -28,11 +28,10 @@
 				</div>
 			</a>
 
-			<div class = "logo col-sm-3">
+			<div class = "logo col-sm-3 text-center">
 				<img src = "../assets/images/plate.png">
 				<p class = "logo_title">CHOWDOWN</p>
-				<p class = "logo_desc text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p class = "logo_desc">Your online food source day or night. We deliver in all parts of the metro. Register now and get your food delivered right on your doorstep!</p>
 			</div>
 
 		
