@@ -2,10 +2,8 @@
 
 <?php function get_page_content () { 
 
-	//if user is set, go to home page, else, go to login.
+	if(isset($_SESSION['user'])){
 	?>
-
-	<?php //echo $_SESSION['user']['username']; ?>
 
 	<div class = "row homebg no-gutters">
 		
@@ -31,11 +29,21 @@
 			<div class = "logo col-sm-3 text-center">
 				<img src = "../assets/images/plate.png">
 				<p class = "logo_title">CHOWDOWN</p>
-				<p class = "logo_desc">Your online food source day or night. We deliver in all parts of the metro. Register now and get your food delivered right on your doorstep!</p>
+				<p class = "logo_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
 			</div>
 
 		
 	</div>
+
+<?php } else { 
+
+	header('location: ./login.php');
+
+	} ?>
+
 
 
 
